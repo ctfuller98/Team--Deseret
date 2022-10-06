@@ -36,6 +36,4 @@ namespace MegaDesk_Tibbitts
             return totalCost;
         }
     }
-
-
 }
