@@ -42,8 +42,8 @@ namespace MegaDesk_Tibbitts
             _deskQuote.rush = Int32.Parse(aqRushOptionsCB.Text);
 
             // Enum assignment test (example from Bro Smith)
-            comboDataType.DataSource = Enum.GetNames(typeof(DesktopMaterial));
-            _deskQuote.material = comboDataType.DataSource;
+            aqSurfMaterialCB.DataSource = Enum.GetNames(typeof(DesktopMaterial));
+            _deskQuote.material = aqSurfMaterialCB.DataSource;
 
 
             //material = aqSurfMaterialCB;

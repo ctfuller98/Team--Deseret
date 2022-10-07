@@ -15,13 +15,13 @@ namespace MegaDesk_Tibbitts
 
         public int totalCost;
 
-        public int linearFeet;
+        private int linearFeet;
 
         public int getLinearFeetCost(int width, int depth)
         {
             linearFeet = width * depth;
 
-            return totalCost += linearFeet;
+            return linearFeet;
         }
 
         public int getDrawerCost(int numDrawers)
@@ -32,7 +32,7 @@ namespace MegaDesk_Tibbitts
         public int getMaterialCost(int materialType)
         {
             // Declare variables.
-            int materialCost;
+            int materialCost = 0;
 
             switch (materialType)
             {
@@ -59,36 +59,42 @@ namespace MegaDesk_Tibbitts
             return totalCost += materialCost;
         }
 
-        public int getRushCost(int linearFeet, int rush)
+        public int getRushCost(int rush)
         {
-            int rushCost;
+            int linearFeet = getLinearFeetCost(width, depth);
+            int rushCost = 0;
 
-            switch (linearFeet)
+
+            if (linearFeet < 1000)
             {
-                case linearFeet < 1000:
-                    if (rush == 7)
-                        rushCost = 30;
-                    else if(rush == 5)
-                        rushCost = 40;
-                    else if(rush == 3)
-                        rushCost = 60;
-                    break;
-                case linearFeet >= 1000 && <= 2000:
-                    if (rush == 7)
-                        rushCost = 35;
-                    else if(rush == 5)
-                        rushCost = 50;
-                    else if(rush == 3)
-                        rushCost = 70;
-                    break;
-                case linearFeet > 2000:
-                    if (rush == 7)
-                        rushCost = 40;
-                    else if(rush == 5)
-                        rushCost = 60;
-                    else if(rush == 3)
-                        rushCost = 80;
-                    break;
+                if (rush == 7)
+                    rushCost = 30;
+                else if (rush == 5)
+                    rushCost = 40;
+                else if (rush == 3)
+                    rushCost = 60;
+            }
+            else if (linearFeet > 999 && linearFeet < 2001)
+            {
+                if (rush == 7)
+                    rushCost = 35;
+                else if (rush == 5)
+                    rushCost = 50;
+                else if (rush == 3)
+                    rushCost = 70;
+            }
+            else if (linearFeet > 2000)
+            {
+                if (rush == 7)
+                    rushCost = 40;
+                else if (rush == 5)
+                    rushCost = 60;
+                else if (rush == 3)
+                    rushCost = 80;
+            }
+            else
+            {
+                rushCost = 0;
             }
 
             return totalCost += rushCost;
@@ -101,7 +107,7 @@ namespace MegaDesk_Tibbitts
             totalCost += getLinearFeetCost(width, depth);
             totalCost += getDrawerCost(numDrawers);
             totalCost += getMaterialCost(materialType);
-            totalCost += getRushCost(linearFeet, rush);
+            totalCost += getRushCost(rush);
 
             return totalCost;
         }

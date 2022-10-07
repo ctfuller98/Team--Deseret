@@ -22,7 +22,7 @@ namespace MegaDesk_Tibbitts
 
         // public DesktopMaterial material = DesktopMaterial.rosewood;
         public DesktopMaterial material { get; set; }
-        public int materialType = (int)material;
+        //public int materialType = (int)material;
     }
 
     // Enumerated value.
