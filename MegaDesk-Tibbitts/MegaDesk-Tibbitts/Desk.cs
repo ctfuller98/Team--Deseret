@@ -20,7 +20,9 @@ namespace MegaDesk_Tibbitts
         public int numDrawers { get; set; }
         public int rush { get; set; }
 
-        public DesktopMaterial material = DesktopMaterial.rosewood;
+        // public DesktopMaterial material = DesktopMaterial.rosewood;
+        public DesktopMaterial material { get; set; }
+        public int materialType = (int)material;
     }
 
     // Enumerated value.
