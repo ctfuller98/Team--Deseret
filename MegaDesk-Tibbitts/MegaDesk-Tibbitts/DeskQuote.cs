@@ -64,7 +64,6 @@ namespace MegaDesk_Tibbitts
             int linearFeet = getLinearFeetCost(width, depth);
             int rushCost = 0;
 
-
             if (linearFeet < 1000)
             {
                 if (rush == 7)
