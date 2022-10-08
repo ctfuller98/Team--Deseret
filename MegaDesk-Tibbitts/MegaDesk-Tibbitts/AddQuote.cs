@@ -40,6 +40,12 @@ namespace MegaDesk_Tibbitts
             _deskQuote.depth = Int32.Parse(aqDeskLengthTB.Text);
             _deskQuote.numDrawers = Int32.Parse(aqNumDrawersCB.Text);
             _deskQuote.rush = Int32.Parse(aqRushOptionsCB.Text);
+
+            // Enum assignment test (example from Bro Smith)
+            aqSurfMaterialCB.DataSource = Enum.GetNames(typeof(DesktopMaterial));
+            _deskQuote.material = aqSurfMaterialCB.DataSource;
+
+
             //material = aqSurfMaterialCB;
             //var displayQuoteView = new DisplayQuote(_desk);
             var displayQuoteView = new DisplayQuote(_deskQuote);
