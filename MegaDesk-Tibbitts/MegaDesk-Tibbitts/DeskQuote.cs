@@ -42,13 +42,13 @@ namespace MegaDesk_Tibbitts
                 case 1:
                     materialCost += 200;
                     break;
-                case 3:
+                case 2:
                     materialCost += 300;
                     break;
-                case 4:
+                case 3:
                     materialCost += 125;
                     break;
-                case 5:
+                case 4:
                     materialCost += 50;
                     break;
                 default:
