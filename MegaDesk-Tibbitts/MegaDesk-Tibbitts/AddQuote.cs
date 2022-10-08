@@ -144,11 +144,7 @@ namespace MegaDesk_Tibbitts
                 {
                     nonNumberEntered = true;
                 }
-
             }
-
-            //depth = Int32.Parse(aqDeskLengthTB.Text);
-            //_deskQuote.depth = depth;
         }
 
         private void aqDeskDepthTB_KeyPress(object sender, KeyPressEventArgs e)
@@ -159,12 +155,6 @@ namespace MegaDesk_Tibbitts
                 // Stop the character from being entered into the control since it is non-numerical.
                 e.Handled = true;
             }
-
-            //depth = Int32.Parse(aqDeskLengthTB.Text);
-            //_deskQuote.depth = depth;
-
         }
-
-
     }
 }

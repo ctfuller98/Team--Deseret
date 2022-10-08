@@ -44,12 +44,16 @@ namespace MegaDesk_Tibbitts
             this.dqRushLabel = new System.Windows.Forms.Label();
             this.dqTotalDisplay = new System.Windows.Forms.Label();
             this.dqTotalLabel = new System.Windows.Forms.Label();
+            this.dqQuoteNumLabel = new System.Windows.Forms.Label();
+            this.dqQuoteNumDisplay = new System.Windows.Forms.Label();
+            this.dqDateLabel = new System.Windows.Forms.Label();
+            this.dqDateDisplay = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dqMainMenuBtn
             // 
             this.dqMainMenuBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dqMainMenuBtn.Location = new System.Drawing.Point(16, 256);
+            this.dqMainMenuBtn.Location = new System.Drawing.Point(27, 325);
             this.dqMainMenuBtn.Name = "dqMainMenuBtn";
             this.dqMainMenuBtn.Size = new System.Drawing.Size(138, 54);
             this.dqMainMenuBtn.TabIndex = 0;
@@ -61,7 +65,7 @@ namespace MegaDesk_Tibbitts
             // 
             this.dqNameLabel.AutoSize = true;
             this.dqNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dqNameLabel.Location = new System.Drawing.Point(13, 13);
+            this.dqNameLabel.Location = new System.Drawing.Point(24, 82);
             this.dqNameLabel.Name = "dqNameLabel";
             this.dqNameLabel.Size = new System.Drawing.Size(56, 18);
             this.dqNameLabel.TabIndex = 1;
@@ -71,7 +75,7 @@ namespace MegaDesk_Tibbitts
             // 
             this.dqNameDisplay.AutoSize = true;
             this.dqNameDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dqNameDisplay.Location = new System.Drawing.Point(92, 13);
+            this.dqNameDisplay.Location = new System.Drawing.Point(103, 82);
             this.dqNameDisplay.Name = "dqNameDisplay";
             this.dqNameDisplay.Size = new System.Drawing.Size(130, 18);
             this.dqNameDisplay.TabIndex = 2;
@@ -81,7 +85,7 @@ namespace MegaDesk_Tibbitts
             // 
             this.dqWidthDisplay.AutoSize = true;
             this.dqWidthDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dqWidthDisplay.Location = new System.Drawing.Point(92, 45);
+            this.dqWidthDisplay.Location = new System.Drawing.Point(103, 114);
             this.dqWidthDisplay.Name = "dqWidthDisplay";
             this.dqWidthDisplay.Size = new System.Drawing.Size(130, 18);
             this.dqWidthDisplay.TabIndex = 4;
@@ -91,7 +95,7 @@ namespace MegaDesk_Tibbitts
             // 
             this.dqWidthLabel.AutoSize = true;
             this.dqWidthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dqWidthLabel.Location = new System.Drawing.Point(12, 45);
+            this.dqWidthLabel.Location = new System.Drawing.Point(23, 114);
             this.dqWidthLabel.Name = "dqWidthLabel";
             this.dqWidthLabel.Size = new System.Drawing.Size(54, 18);
             this.dqWidthLabel.TabIndex = 3;
@@ -101,7 +105,7 @@ namespace MegaDesk_Tibbitts
             // 
             this.dqDepthDisplay.AutoSize = true;
             this.dqDepthDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dqDepthDisplay.Location = new System.Drawing.Point(92, 78);
+            this.dqDepthDisplay.Location = new System.Drawing.Point(103, 147);
             this.dqDepthDisplay.Name = "dqDepthDisplay";
             this.dqDepthDisplay.Size = new System.Drawing.Size(130, 18);
             this.dqDepthDisplay.TabIndex = 6;
@@ -111,7 +115,7 @@ namespace MegaDesk_Tibbitts
             // 
             this.dqDepthLabel.AutoSize = true;
             this.dqDepthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dqDepthLabel.Location = new System.Drawing.Point(12, 78);
+            this.dqDepthLabel.Location = new System.Drawing.Point(23, 147);
             this.dqDepthLabel.Name = "dqDepthLabel";
             this.dqDepthLabel.Size = new System.Drawing.Size(51, 18);
             this.dqDepthLabel.TabIndex = 5;
@@ -121,7 +125,7 @@ namespace MegaDesk_Tibbitts
             // 
             this.dqDrawersDisplay.AutoSize = true;
             this.dqDrawersDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dqDrawersDisplay.Location = new System.Drawing.Point(92, 111);
+            this.dqDrawersDisplay.Location = new System.Drawing.Point(103, 180);
             this.dqDrawersDisplay.Name = "dqDrawersDisplay";
             this.dqDrawersDisplay.Size = new System.Drawing.Size(130, 18);
             this.dqDrawersDisplay.TabIndex = 8;
@@ -131,7 +135,7 @@ namespace MegaDesk_Tibbitts
             // 
             this.dqDrawersLabel.AutoSize = true;
             this.dqDrawersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dqDrawersLabel.Location = new System.Drawing.Point(13, 111);
+            this.dqDrawersLabel.Location = new System.Drawing.Point(24, 180);
             this.dqDrawersLabel.Name = "dqDrawersLabel";
             this.dqDrawersLabel.Size = new System.Drawing.Size(68, 18);
             this.dqDrawersLabel.TabIndex = 7;
@@ -141,7 +145,7 @@ namespace MegaDesk_Tibbitts
             // 
             this.dqMaterialDisplay.AutoSize = true;
             this.dqMaterialDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dqMaterialDisplay.Location = new System.Drawing.Point(92, 147);
+            this.dqMaterialDisplay.Location = new System.Drawing.Point(103, 216);
             this.dqMaterialDisplay.Name = "dqMaterialDisplay";
             this.dqMaterialDisplay.Size = new System.Drawing.Size(130, 18);
             this.dqMaterialDisplay.TabIndex = 10;
@@ -151,7 +155,7 @@ namespace MegaDesk_Tibbitts
             // 
             this.dqMaterialsLabel.AutoSize = true;
             this.dqMaterialsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dqMaterialsLabel.Location = new System.Drawing.Point(12, 147);
+            this.dqMaterialsLabel.Location = new System.Drawing.Point(23, 216);
             this.dqMaterialsLabel.Name = "dqMaterialsLabel";
             this.dqMaterialsLabel.Size = new System.Drawing.Size(64, 18);
             this.dqMaterialsLabel.TabIndex = 9;
@@ -161,7 +165,7 @@ namespace MegaDesk_Tibbitts
             // 
             this.dqRushDisplay.AutoSize = true;
             this.dqRushDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dqRushDisplay.Location = new System.Drawing.Point(92, 181);
+            this.dqRushDisplay.Location = new System.Drawing.Point(103, 250);
             this.dqRushDisplay.Name = "dqRushDisplay";
             this.dqRushDisplay.Size = new System.Drawing.Size(130, 18);
             this.dqRushDisplay.TabIndex = 12;
@@ -171,7 +175,7 @@ namespace MegaDesk_Tibbitts
             // 
             this.dqRushLabel.AutoSize = true;
             this.dqRushLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dqRushLabel.Location = new System.Drawing.Point(13, 181);
+            this.dqRushLabel.Location = new System.Drawing.Point(24, 250);
             this.dqRushLabel.Name = "dqRushLabel";
             this.dqRushLabel.Size = new System.Drawing.Size(47, 18);
             this.dqRushLabel.TabIndex = 11;
@@ -181,7 +185,7 @@ namespace MegaDesk_Tibbitts
             // 
             this.dqTotalDisplay.AutoSize = true;
             this.dqTotalDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dqTotalDisplay.Location = new System.Drawing.Point(92, 218);
+            this.dqTotalDisplay.Location = new System.Drawing.Point(103, 287);
             this.dqTotalDisplay.Name = "dqTotalDisplay";
             this.dqTotalDisplay.Size = new System.Drawing.Size(130, 18);
             this.dqTotalDisplay.TabIndex = 14;
@@ -191,17 +195,61 @@ namespace MegaDesk_Tibbitts
             // 
             this.dqTotalLabel.AutoSize = true;
             this.dqTotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dqTotalLabel.Location = new System.Drawing.Point(13, 218);
+            this.dqTotalLabel.Location = new System.Drawing.Point(24, 287);
             this.dqTotalLabel.Name = "dqTotalLabel";
             this.dqTotalLabel.Size = new System.Drawing.Size(51, 18);
             this.dqTotalLabel.TabIndex = 13;
             this.dqTotalLabel.Text = "Total:";
+            // 
+            // dqQuoteNumLabel
+            // 
+            this.dqQuoteNumLabel.AutoSize = true;
+            this.dqQuoteNumLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dqQuoteNumLabel.Location = new System.Drawing.Point(21, 19);
+            this.dqQuoteNumLabel.Name = "dqQuoteNumLabel";
+            this.dqQuoteNumLabel.Size = new System.Drawing.Size(123, 18);
+            this.dqQuoteNumLabel.TabIndex = 15;
+            this.dqQuoteNumLabel.Text = "Quote Number:";
+            // 
+            // dqQuoteNumDisplay
+            // 
+            this.dqQuoteNumDisplay.AutoSize = true;
+            this.dqQuoteNumDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dqQuoteNumDisplay.Location = new System.Drawing.Point(150, 19);
+            this.dqQuoteNumDisplay.Name = "dqQuoteNumDisplay";
+            this.dqQuoteNumDisplay.Size = new System.Drawing.Size(130, 18);
+            this.dqQuoteNumDisplay.TabIndex = 16;
+            this.dqQuoteNumDisplay.Text = "placeHolderText";
+            // 
+            // dqDateLabel
+            // 
+            this.dqDateLabel.AutoSize = true;
+            this.dqDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dqDateLabel.Location = new System.Drawing.Point(23, 49);
+            this.dqDateLabel.Name = "dqDateLabel";
+            this.dqDateLabel.Size = new System.Drawing.Size(43, 18);
+            this.dqDateLabel.TabIndex = 17;
+            this.dqDateLabel.Text = "Date:";
+            // 
+            // dqDateDisplay
+            // 
+            this.dqDateDisplay.AutoSize = true;
+            this.dqDateDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dqDateDisplay.Location = new System.Drawing.Point(103, 49);
+            this.dqDateDisplay.Name = "dqDateDisplay";
+            this.dqDateDisplay.Size = new System.Drawing.Size(130, 18);
+            this.dqDateDisplay.TabIndex = 18;
+            this.dqDateDisplay.Text = "placeHolderText";
             // 
             // DisplayQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(530, 433);
+            this.Controls.Add(this.dqDateDisplay);
+            this.Controls.Add(this.dqDateLabel);
+            this.Controls.Add(this.dqQuoteNumDisplay);
+            this.Controls.Add(this.dqQuoteNumLabel);
             this.Controls.Add(this.dqTotalDisplay);
             this.Controls.Add(this.dqTotalLabel);
             this.Controls.Add(this.dqRushDisplay);
@@ -242,5 +290,9 @@ namespace MegaDesk_Tibbitts
         private System.Windows.Forms.Label dqRushLabel;
         private System.Windows.Forms.Label dqTotalDisplay;
         private System.Windows.Forms.Label dqTotalLabel;
+        private System.Windows.Forms.Label dqQuoteNumLabel;
+        private System.Windows.Forms.Label dqQuoteNumDisplay;
+        private System.Windows.Forms.Label dqDateLabel;
+        private System.Windows.Forms.Label dqDateDisplay;
     }
 }

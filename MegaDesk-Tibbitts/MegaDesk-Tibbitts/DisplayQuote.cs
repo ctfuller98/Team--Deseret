@@ -40,7 +40,7 @@ namespace MegaDesk_Tibbitts
                 dqDrawersDisplay.Text = _deskQuote.numDrawers.ToString();
                 dqMaterialDisplay.Text = _deskQuote.material.ToString();
                 dqRushDisplay.Text = _deskQuote.rush.ToString();
-                dqTotalDisplay.Text = _deskQuote.getTotal().ToString();
+                dqTotalDisplay.Text = "$" + _deskQuote.getTotal().ToString();
             } catch
             {
                 Console.WriteLine("Error Loading Values Into Display Quote Screen.");
