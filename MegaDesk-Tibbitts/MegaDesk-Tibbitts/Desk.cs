@@ -8,23 +8,90 @@ namespace MegaDesk_Tibbitts
 {
     public class Desk
     {
-        // Set constant values.
-        public const int MIN_WIDTH = 24;
-        public const int MAX_WIDTH = 96;
-        public const int MIN_DEPTH = 12;
-        public const int MAX_DEPTH = 48;
+        public const int MAXWIDTH = 96;
+        public const int MINWIDTH = 24;
+        public const int MAXDEPTH = 48;
+        public const int MINDEPTH = 12;
+        public const int MAXDRWERS = 7;
+        public const int MINDRAWERS = 0;
 
-        public string name { get; set; }
-        public int width { get; set; }
-        public int depth { get; set; }
-        public int numDrawers { get; set; }
-        public int rush { get; set; }
 
-        // public DesktopMaterial material = DesktopMaterial.rosewood;
-        public DesktopMaterial material { get; set; }
-        //public int materialType = (int)material;
+        public enum DeskMaterial
+        {
+            Pine,
+            Laminate,
+            Veneer,
+            Oak,
+            Rosewood
+        }
+
+        private int _width;
+
+        public int Width
+        {
+            get { return _width; }
+            set
+            {
+                if (value <= MAXWIDTH && value >= MINWIDTH)
+                {
+                    _width = value;
+                }
+                else
+                {
+                    throw new Exception("Invalid width value");
+                }
+            }
+        }
+
+        private int _depth;
+
+        public int Depth
+        {
+            get { return _depth; }
+            set
+            {
+                if (value <= MAXDEPTH && value >= MINDEPTH)
+                {
+                    _depth = value;
+                }
+                else
+                {
+                    throw new Exception("Invalid depth value.");
+                }
+            }
+        }
+
+        private int _drawerNumber;
+
+        public int DrawerNumber
+        {
+            get { return _drawerNumber; }
+            set
+            {
+                if (value <= MAXDRWERS && value >= MINDRAWERS)
+                {
+                    _drawerNumber = value;
+                }
+                else
+                {
+                    throw new Exception("Invalid Drawer Amount.");
+                }
+            }
+        }
+
+        public DeskMaterial Material { get; set; }
+
+        public Desk(int width, int depth, int drawerNumber, DeskMaterial material)
+        {
+            this.Width = width;
+            this.Depth = depth;
+            this.DrawerNumber = drawerNumber;
+            this.Material = material;
+        }
+
+        public int getSurfaceArea()
+        {
+            return Width * Depth;
+        }
     }
-
-    // Enumerated value.
-    public enum DesktopMaterial {laminate, oak, rosewood, veneer, pine};
 }
