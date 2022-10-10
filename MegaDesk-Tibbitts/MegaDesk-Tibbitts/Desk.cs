@@ -14,15 +14,10 @@ namespace MegaDesk_Tibbitts
         public const int MIN_DEPTH = 12;
         public const int MAX_DEPTH = 48;
 
-        //public string name { get; set; }
         public int width { get; set; }
         public int depth { get; set; }
         public int numDrawers { get; set; }
-        //public int rush { get; set; }
-
-        // public DesktopMaterial material = DesktopMaterial.rosewood;
         public DesktopMaterial materialType { get; set; }
-        //public int materialType = (int)material;
     }
 
     // Enumerated value.

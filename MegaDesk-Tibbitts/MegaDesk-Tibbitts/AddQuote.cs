@@ -44,10 +44,7 @@ namespace MegaDesk_Tibbitts
             // Enum assignment test (example from Bro Smith)
             //aqSurfMaterialCB.DataSource = Enum.GetNames(typeof(DesktopMaterial));
             deskQuote.Desk.materialType = (DesktopMaterial)aqSurfMaterialCB.DataSource;
-
             var displayQuoteView = new DisplayQuote(deskQuote);
-            //newDesk.name = aqFullNameLabel.Text; // MAY NEED TO DO AS A DESKQUOTE CLASS OBJECT***
-            //DisplayQuote displayQuoteView = new DisplayQuote(_desk);
             displayQuoteView.Tag = this;
             displayQuoteView.Show(this);
             Hide();
