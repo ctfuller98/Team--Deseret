@@ -24,3 +24,9 @@ C:\Users\tomto\Source\Repos\Team--Deseret\MegaDesk-Tibbitts\MegaDesk-Tibbitts\ob
 C:\Users\tomto\Source\Repos\Team--Deseret\MegaDesk-Tibbitts\MegaDesk-Tibbitts\obj\Debug\MegaDesk-Tibbitts.csproj.CoreCompileInputs.cache
 C:\Users\tomto\Source\Repos\Team--Deseret\MegaDesk-Tibbitts\MegaDesk-Tibbitts\obj\Debug\MegaDesk-Tibbitts.exe
 C:\Users\tomto\Source\Repos\Team--Deseret\MegaDesk-Tibbitts\MegaDesk-Tibbitts\obj\Debug\MegaDesk-Tibbitts.pdb
+C:\Users\tomto\Source\Repos\Team--Deseret\MegaDesk-Tibbitts\MegaDesk-Tibbitts\bin\Debug\MegaDesk-Tibbitts.exe.config
+C:\Users\tomto\Source\Repos\Team--Deseret\MegaDesk-Tibbitts\MegaDesk-Tibbitts\bin\Debug\MegaDesk-Tibbitts.exe
+C:\Users\tomto\Source\Repos\Team--Deseret\MegaDesk-Tibbitts\MegaDesk-Tibbitts\bin\Debug\MegaDesk-Tibbitts.pdb
+C:\Users\tomto\Source\Repos\Team--Deseret\MegaDesk-Tibbitts\MegaDesk-Tibbitts\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\tomto\Source\Repos\Team--Deseret\MegaDesk-Tibbitts\MegaDesk-Tibbitts\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\tomto\Source\Repos\Team--Deseret\MegaDesk-Tibbitts\MegaDesk-Tibbitts\obj\Debug\MegaDesk-Tibbitts.csproj.CopyComplete

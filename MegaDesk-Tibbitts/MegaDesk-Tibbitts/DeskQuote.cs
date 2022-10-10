@@ -1,22 +1,25 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Drawing.Charts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MegaDesk_Tibbitts
 {
-    public class DeskQuote : Desk
+    public class DeskQuote //: Desk
     {
-
+        // Declare variables
+        public Desk Desk { get; set; }
+        public string name { get; set; }
+        public int rush { get; set; }
         private DateTime TimeStamp = new DateTime();
-
         public DateTime timeStamp { get => TimeStamp; set => TimeStamp = value; }
-
         public int totalCost;
-
         private int linearFeet;
 
+        // Declare methods
         public int getLinearFeetCost(int width, int depth)
         {
             linearFeet = width * depth;
@@ -61,7 +64,7 @@ namespace MegaDesk_Tibbitts
 
         public int getRushCost(int rush)
         {
-            int linearFeet = getLinearFeetCost(width, depth);
+            int linearFeet = getLinearFeetCost(Desk.width, Desk.depth);
             int rushCost = 0;
 
             if (linearFeet < 1000)
@@ -100,12 +103,12 @@ namespace MegaDesk_Tibbitts
 
         }
 
-        public int getTotal()
+        public int getTotal(Desk desk)
         {
             totalCost += 200;
-            totalCost += getLinearFeetCost(width, depth);
-            totalCost += getDrawerCost(numDrawers);
-            totalCost += getMaterialCost(materialType);
+            totalCost += getLinearFeetCost(desk.width, desk.depth);
+            totalCost += getDrawerCost(desk.numDrawers);
+            totalCost += getMaterialCost((int)desk.materialType);
             totalCost += getRushCost(rush);
 
             return totalCost;

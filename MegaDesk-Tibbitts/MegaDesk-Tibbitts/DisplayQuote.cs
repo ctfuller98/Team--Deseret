@@ -13,7 +13,9 @@ namespace MegaDesk_Tibbitts
     public partial class DisplayQuote : Form
     {   
         // Declare variables.
-        private DeskQuote _deskQuote;
+        private readonly DeskQuote _deskQuote;
+        private readonly Desk desk;
+
 
         public DisplayQuote(DeskQuote deskQuote)
         {
@@ -35,12 +37,12 @@ namespace MegaDesk_Tibbitts
             try
             {
                 dqNameDisplay.Text = _deskQuote.name;
-                dqWidthDisplay.Text = _deskQuote.width.ToString();
-                dqDepthDisplay.Text = _deskQuote.depth.ToString();
-                dqDrawersDisplay.Text = _deskQuote.numDrawers.ToString();
-                dqMaterialDisplay.Text = _deskQuote.material.ToString();
+                dqWidthDisplay.Text = _deskQuote.Desk.width.ToString();
+                dqDepthDisplay.Text = _deskQuote.Desk.depth.ToString();
+                dqDrawersDisplay.Text = _deskQuote.Desk.numDrawers.ToString();
+                dqMaterialDisplay.Text = _deskQuote.Desk.materialType.ToString();
                 dqRushDisplay.Text = _deskQuote.rush.ToString();
-                dqTotalDisplay.Text = "$" + _deskQuote.getTotal().ToString();
+                dqTotalDisplay.Text = "$" + _deskQuote.getTotal(desk).ToString();
             } catch
             {
                 Console.WriteLine("Error Loading Values Into Display Quote Screen.");

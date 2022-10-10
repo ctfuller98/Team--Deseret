@@ -231,6 +231,7 @@ namespace MegaDesk_Tibbitts
             this.Controls.Add(this.aqFullNameLabel);
             this.Name = "AddQuote";
             this.Text = "AddQuote";
+            this.Load += new System.EventHandler(this.AddQuote_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
