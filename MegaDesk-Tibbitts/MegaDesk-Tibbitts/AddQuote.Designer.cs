@@ -62,6 +62,7 @@ namespace MegaDesk_Tibbitts
             this.aqFullNameTB.Name = "aqFullNameTB";
             this.aqFullNameTB.Size = new System.Drawing.Size(100, 20);
             this.aqFullNameTB.TabIndex = 1;
+            this.aqFullNameTB.TextChanged += new System.EventHandler(this.aqFullNameTB_TextChanged);
             // 
             // aqDeskWidthLabel
             // 

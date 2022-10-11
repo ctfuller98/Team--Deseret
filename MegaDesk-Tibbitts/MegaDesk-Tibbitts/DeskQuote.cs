@@ -8,7 +8,21 @@ namespace MegaDesk_Tibbitts
 {
     public class DeskQuote : Desk
     {
+        public string fullName { get; set; }
+        public Desk desk { get; set; }
+        public string quoteDate { get; set; }
+        public int rushDays { get; set; }
+        public int MaterialPrice { get; set; }
 
+
+        public DeskQuote()
+        {
+            fullName = String.Empty;
+            desk = new Desk();
+            quoteDate = DateTime.Now.ToShortDateString();
+            rushDays = 14;
+            MaterialPrice = (int)desk.material;
+        }
         private DateTime TimeStamp = new DateTime();
 
         public DateTime timeStamp { get => TimeStamp; set => TimeStamp = value; }
@@ -29,7 +43,7 @@ namespace MegaDesk_Tibbitts
             return totalCost += numDrawers * 50;
         }
 
-        public int getMaterialCost(int materialType)
+        /*public int getMaterialCost(int materialType)
         {
             // Declare variables.
             int materialCost = 0;
@@ -58,6 +72,7 @@ namespace MegaDesk_Tibbitts
             
             return totalCost += materialCost;
         }
+        */
 
         public int getRushCost(int rush)
         {
@@ -105,8 +120,9 @@ namespace MegaDesk_Tibbitts
             totalCost += 200;
             totalCost += getLinearFeetCost(width, depth);
             totalCost += getDrawerCost(numDrawers);
-            totalCost += getMaterialCost(materialType);
-            totalCost += getRushCost(rush);
+            //totalCost += getMaterialCost(desk.material);
+            totalCost += MaterialPrice;
+            totalCost += getRushCost(rushDays);
 
             return totalCost;
         }

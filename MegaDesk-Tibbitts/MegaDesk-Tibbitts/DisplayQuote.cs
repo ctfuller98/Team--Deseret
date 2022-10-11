@@ -34,12 +34,12 @@ namespace MegaDesk_Tibbitts
         {
             try
             {
-                dqNameDisplay.Text = _deskQuote.name;
-                dqWidthDisplay.Text = _deskQuote.width.ToString();
-                dqDepthDisplay.Text = _deskQuote.depth.ToString();
-                dqDrawersDisplay.Text = _deskQuote.numDrawers.ToString();
-                dqMaterialDisplay.Text = _deskQuote.material.ToString();
-                dqRushDisplay.Text = _deskQuote.rush.ToString();
+                dqNameDisplay.Text = _deskQuote.fullName;
+                dqWidthDisplay.Text = _deskQuote.desk.width.ToString();
+                dqDepthDisplay.Text = _deskQuote.desk.depth.ToString();
+                dqDrawersDisplay.Text = _deskQuote.desk.numDrawers.ToString();
+                dqMaterialDisplay.Text = _deskQuote.desk.material.ToString();
+                dqRushDisplay.Text = _deskQuote.rushDays.ToString();
                 dqTotalDisplay.Text = _deskQuote.getTotal().ToString();
             } catch
             {

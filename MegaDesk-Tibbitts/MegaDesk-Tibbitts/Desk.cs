@@ -6,6 +6,14 @@ using System.Threading.Tasks;
 
 namespace MegaDesk_Tibbitts
 {
+    public enum DeskMaterial
+    {
+        Pine = 50,
+        Laminate = 100,
+        Veneer = 125,
+        Oak = 200,
+        Rosewood = 300
+    }
     public class Desk
     {
         public const int MAXWIDTH = 96;
@@ -15,15 +23,27 @@ namespace MegaDesk_Tibbitts
         public const int MAXDRWERS = 7;
         public const int MINDRAWERS = 0;
 
-
-        public enum DeskMaterial
+        //default
+        public Desk()
         {
-            Pine,
-            Laminate,
-            Veneer,
-            Oak,
-            Rosewood
+            width = 0;
+            depth = 0;
+            numDrawers = 0;
+            material = DeskMaterial.Oak;
         }
+        public Desk(int width, int depth, int numDrawers, DeskMaterial material)
+                {
+                    this.width = width;
+                    this.depth = depth;
+                    this.numDrawers = numDrawers;
+                    this.material = material;
+                }
+        public int width { get; set; }
+        public int depth { get; set; }
+        public int numDrawers { get; set; }
+        public DeskMaterial material { get; set; }
+
+        
 
         private int _width;
 
@@ -77,16 +97,6 @@ namespace MegaDesk_Tibbitts
                     throw new Exception("Invalid Drawer Amount.");
                 }
             }
-        }
-
-        public DeskMaterial Material { get; set; }
-
-        public Desk(int width, int depth, int drawerNumber, DeskMaterial material)
-        {
-            this.Width = width;
-            this.Depth = depth;
-            this.DrawerNumber = drawerNumber;
-            this.Material = material;
         }
 
         public int getSurfaceArea()

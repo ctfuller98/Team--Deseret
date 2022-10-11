@@ -12,17 +12,23 @@ namespace MegaDesk_Tibbitts
 {
     public partial class AddQuote : Form
     {
+        private Desk _desk = new Desk();
+        private DeskQuote _deskQuote = new DeskQuote();
 
         public AddQuote()
         {
             InitializeComponent();
+            
+            // Enum assignment test (example from Bro Smith)
+            aqSurfMaterialCB.DataSource = Enum.GetNames(typeof(DeskMaterial));
+            //_deskQuote.material = aqSurfMaterialCB.DataSource;
         }
+        
 
         // Declare variables.
         ErrorProvider errorProvider1 = new ErrorProvider();
         private bool nonNumberEntered = false;
-        // private readonly Desk _desk = new Desk();
-        private readonly DeskQuote _deskQuote = new DeskQuote();
+        
         int widthConversion;
 
         private void aqMainMenuBtn_Click(object sender, EventArgs e)
@@ -36,17 +42,13 @@ namespace MegaDesk_Tibbitts
         {
             
             //_desk.name = aqFullNameTB.Text;
-            _deskQuote.name = aqFullNameTB.Text;
-            _deskQuote.depth = Int32.Parse(aqDeskLengthTB.Text);
-            _deskQuote.numDrawers = Int32.Parse(aqNumDrawersCB.Text);
-            _deskQuote.rush = Int32.Parse(aqRushOptionsCB.Text);
+            //var name = aqFullNameTB.Text;
+            _deskQuote.desk.depth = Int32.Parse(aqDeskLengthTB.Text);
+            _deskQuote.desk.width = Int32.Parse(aqDeskWidthTB.Text);
+            _deskQuote.desk.numDrawers = Int32.Parse(aqNumDrawersCB.Text);
+            _deskQuote.rushDays = Int32.Parse(aqRushOptionsCB.Text);
+            _deskQuote.desk.material = (DeskMaterial)Enum.Parse(typeof(DeskMaterial), aqSurfMaterialCB.SelectedItem.ToString(), true);
 
-            // Enum assignment test (example from Bro Smith)
-            aqSurfMaterialCB.DataSource = Enum.GetNames(typeof(DesktopMaterial));
-            _deskQuote.material = aqSurfMaterialCB.DataSource;
-
-
-            //material = aqSurfMaterialCB;
             //var displayQuoteView = new DisplayQuote(_desk);
             var displayQuoteView = new DisplayQuote(_deskQuote);
             //newDesk.name = aqFullNameLabel.Text; // MAY NEED TO DO AS A DESKQUOTE CLASS OBJECT***
@@ -81,12 +83,12 @@ namespace MegaDesk_Tibbitts
         public bool validWidth(string width, out string errorMessage)
         {
             widthConversion = Int32.Parse(width);
-            
-            if (widthConversion >= Desk.MIN_WIDTH && widthConversion <= Desk.MAX_WIDTH)
+           
+            if (widthConversion >= Desk.MINWIDTH && widthConversion <= Desk.MAXWIDTH)
             {
                 errorMessage = "";
                 aqDeskWidthTB.BackColor = System.Drawing.Color.White;
-                _deskQuote.width = widthConversion;
+                _desk.width = widthConversion;
                 return true;
             }
             else
@@ -165,6 +167,9 @@ namespace MegaDesk_Tibbitts
 
         }
 
-
+        private void aqFullNameTB_TextChanged(object sender, EventArgs e)
+        {
+            _deskQuote.fullName = aqFullNameTB.Text;
+        }
     }
 }
