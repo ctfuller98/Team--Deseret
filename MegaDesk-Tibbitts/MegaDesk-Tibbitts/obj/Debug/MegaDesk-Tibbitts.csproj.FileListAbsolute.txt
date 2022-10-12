@@ -39,3 +39,6 @@ C:\Users\becky\Source\Repos\Team--Deseret\MegaDesk-Tibbitts\MegaDesk-Tibbitts\ob
 C:\Users\becky\Source\Repos\Team--Deseret\MegaDesk-Tibbitts\MegaDesk-Tibbitts\bin\Debug\MegaDesk-Tibbitts.exe.config
 C:\Users\becky\Source\Repos\Team--Deseret\MegaDesk-Tibbitts\MegaDesk-Tibbitts\bin\Debug\MegaDesk-Tibbitts.exe
 C:\Users\becky\Source\Repos\Team--Deseret\MegaDesk-Tibbitts\MegaDesk-Tibbitts\bin\Debug\MegaDesk-Tibbitts.pdb
+C:\Users\becky\Source\Repos\Team--Deseret\MegaDesk-Tibbitts\MegaDesk-Tibbitts\bin\Debug\Newtonsoft.Json.dll
+C:\Users\becky\Source\Repos\Team--Deseret\MegaDesk-Tibbitts\MegaDesk-Tibbitts\bin\Debug\Newtonsoft.Json.xml
+C:\Users\becky\Source\Repos\Team--Deseret\MegaDesk-Tibbitts\MegaDesk-Tibbitts\obj\Debug\MegaDesk-Tibbitts.csproj.CopyComplete

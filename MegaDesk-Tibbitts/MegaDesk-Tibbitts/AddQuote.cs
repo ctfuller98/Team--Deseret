@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace MegaDesk_Tibbitts
 {
@@ -48,6 +50,23 @@ namespace MegaDesk_Tibbitts
             _deskQuote.desk.numDrawers = Int32.Parse(aqNumDrawersCB.Text);
             _deskQuote.rushDays = Int32.Parse(aqRushOptionsCB.Text);
             _deskQuote.desk.material = (DeskMaterial)Enum.Parse(typeof(DeskMaterial), aqSurfMaterialCB.SelectedItem.ToString(), true);
+
+            //saving quotes to file
+            List<DeskQuote> allQuotes;
+
+            try
+            {
+                var quotesJson = File.ReadAllText("quotes.json");
+                allQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(quotesJson) ?? new List<DeskQuote>();
+            }
+            catch (Exception)
+            {
+                allQuotes = new List<DeskQuote>();
+            }
+
+            allQuotes.Add(_deskQuote);
+            var json = JsonConvert.SerializeObject(allQuotes);
+            File.WriteAllText("quotes.json", json);
 
             //var displayQuoteView = new DisplayQuote(_desk);
             var displayQuoteView = new DisplayQuote(_deskQuote);

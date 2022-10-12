@@ -12,6 +12,7 @@ namespace MegaDesk_Tibbitts
 {
     public partial class ViewAllQuotes : Form
     {
+        public List<DeskQuote> allQuotes;
         public ViewAllQuotes()
         {
             InitializeComponent();

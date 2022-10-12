@@ -35,7 +35,7 @@ namespace MegaDesk_Tibbitts
             // vqMainMenuBtn
             // 
             this.vqMainMenuBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vqMainMenuBtn.Location = new System.Drawing.Point(614, 346);
+            this.vqMainMenuBtn.Location = new System.Drawing.Point(12, 384);
             this.vqMainMenuBtn.Name = "vqMainMenuBtn";
             this.vqMainMenuBtn.Size = new System.Drawing.Size(138, 54);
             this.vqMainMenuBtn.TabIndex = 0;
