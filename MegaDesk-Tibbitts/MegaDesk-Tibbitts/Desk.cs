@@ -12,7 +12,7 @@ namespace MegaDesk_Tibbitts
         Laminate = 100,
         Veneer = 125,
         Oak = 200,
-        Rosewood = 300
+        Rosewood = 300,
     }
     public class Desk
     {
@@ -29,7 +29,7 @@ namespace MegaDesk_Tibbitts
             width = 0;
             depth = 0;
             numDrawers = 0;
-            material = DeskMaterial.Oak;
+            material = DeskMaterial.Pine;
         }
         public Desk(int width, int depth, int numDrawers, DeskMaterial material)
                 {

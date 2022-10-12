@@ -19,6 +19,11 @@ namespace MegaDesk_Tibbitts
         {
             _deskQuote = deskQuote;
             InitializeComponent();
+            dqQuoteDate.Text = deskQuote.quoteDate;
+            dqMaterialCost.Text = ((int)deskQuote.desk.material).ToString();
+            
+            //dqTotalDisplay.Text = deskQuote.TotalPrice.ToString();
+
         }
 
         private void dqMainMenuBtn_Click(object sender, EventArgs e)
@@ -41,6 +46,10 @@ namespace MegaDesk_Tibbitts
                 dqMaterialDisplay.Text = _deskQuote.desk.material.ToString();
                 dqRushDisplay.Text = _deskQuote.rushDays.ToString();
                 dqTotalDisplay.Text = _deskQuote.getTotal().ToString();
+
+                dqLinearFeetCost.Text = _deskQuote.linearFeet.ToString();
+                dqDrawerCost.Text = _deskQuote.drawerCost.ToString();
+                dqRushCost.Text = _deskQuote.rushCost.ToString();
             } catch
             {
                 Console.WriteLine("Error Loading Values Into Display Quote Screen.");

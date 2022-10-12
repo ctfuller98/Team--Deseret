@@ -12,7 +12,10 @@ namespace MegaDesk_Tibbitts
         public Desk desk { get; set; }
         public string quoteDate { get; set; }
         public int rushDays { get; set; }
-        public int MaterialPrice { get; set; }
+        public object RushCost { get; }
+        public object TotalPrice { get; }
+
+        //public int MaterialPrice { get; set; }
 
 
         public DeskQuote()
@@ -21,7 +24,9 @@ namespace MegaDesk_Tibbitts
             desk = new Desk();
             quoteDate = DateTime.Now.ToShortDateString();
             rushDays = 14;
-            MaterialPrice = (int)desk.material;
+            //MaterialPrice = (int)desk.material;
+            //RushCost = getRushCost(rushDays);
+            //TotalPrice = getTotal();
         }
         private DateTime TimeStamp = new DateTime();
 
@@ -29,7 +34,13 @@ namespace MegaDesk_Tibbitts
 
         public int totalCost;
 
-        private int linearFeet;
+        public int linearFeet;
+
+        public int drawerCost;
+
+        public int rushCost;
+
+
 
         public int getLinearFeetCost(int width, int depth)
         {
@@ -40,10 +51,10 @@ namespace MegaDesk_Tibbitts
 
         public int getDrawerCost(int numDrawers)
         {
-            return totalCost += numDrawers * 50;
+            return drawerCost += numDrawers * 50;
         }
 
-        /*public int getMaterialCost(int materialType)
+        /*public int getMaterialCost(string materialType)
         {
             // Declare variables.
             int materialCost = 0;
@@ -71,39 +82,39 @@ namespace MegaDesk_Tibbitts
             }
             
             return totalCost += materialCost;
-        }
-        */
+        }*/
+        
 
-        public int getRushCost(int rush)
+        public int getRushCost(int rushDays)
         {
-            int linearFeet = getLinearFeetCost(width, depth);
-            int rushCost = 0;
+            int linearFeet = getLinearFeetCost(desk.width, desk.depth);
+            //int rushCost = 0;
 
             if (linearFeet < 1000)
             {
-                if (rush == 7)
+                if (rushDays == 7)
                     rushCost = 30;
-                else if (rush == 5)
+                else if (rushDays == 5)
                     rushCost = 40;
-                else if (rush == 3)
+                else if (rushDays == 3)
                     rushCost = 60;
             }
             else if (linearFeet > 999 && linearFeet < 2001)
             {
-                if (rush == 7)
+                if (rushDays == 7)
                     rushCost = 35;
-                else if (rush == 5)
+                else if (rushDays == 5)
                     rushCost = 50;
-                else if (rush == 3)
+                else if (rushDays == 3)
                     rushCost = 70;
             }
             else if (linearFeet > 2000)
             {
-                if (rush == 7)
+                if (rushDays == 7)
                     rushCost = 40;
-                else if (rush == 5)
+                else if (rushDays == 5)
                     rushCost = 60;
-                else if (rush == 3)
+                else if (rushDays == 3)
                     rushCost = 80;
             }
             else
@@ -111,17 +122,17 @@ namespace MegaDesk_Tibbitts
                 rushCost = 0;
             }
 
-            return totalCost += rushCost;
+            return rushCost;
 
         }
 
         public int getTotal()
         {
             totalCost += 200;
-            totalCost += getLinearFeetCost(width, depth);
-            totalCost += getDrawerCost(numDrawers);
+            totalCost += getLinearFeetCost(desk.width, desk.depth);
+            totalCost += getDrawerCost(desk.numDrawers);
             //totalCost += getMaterialCost(desk.material);
-            totalCost += MaterialPrice;
+            totalCost += (int)desk.material;
             totalCost += getRushCost(rushDays);
 
             return totalCost;
