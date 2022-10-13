@@ -40,15 +40,15 @@ namespace MegaDesk_Tibbitts
                 dqQuoteNumDisplay.Text = DeskQuote.quoteNum.ToString();
                 dqDateDisplay.Text = _deskQuote.TimeStamp.ToString("MMM d, yyyy");
                 dqNameDisplay.Text = _deskQuote.name;
-                dqWidthDisplay.Text = _deskQuote.Desk.width.ToString() + " inches";
-                dqDepthDisplay.Text = _deskQuote.Desk.depth.ToString() + " inches";
-                dqDrawersDisplay.Text = _deskQuote.Desk.numDrawers.ToString();
-                dqMaterialDisplay.Text = _deskQuote.Desk.materialType.ToString();
-                dqRushDisplay.Text = _deskQuote.rush.ToString() + " days";
-                dqTotalDisplay.Text = "$" + _deskQuote.getTotal(desk).ToString();
+                dqWidthDisplay.Text = _deskQuote.Desk.Width + " inches";
+                dqDepthDisplay.Text = _deskQuote.Desk.Depth + " inches";
+                dqDrawersDisplay.Text = _deskQuote.Desk.DrawerNumber.ToString();
+                dqMaterialDisplay.Text = _deskQuote.Desk.Material;
+                dqRushDisplay.Text = _deskQuote.rush + " days";
+                dqTotalDisplay.Text = "$" + _deskQuote.getTotal(desk);
                 dqBaseCostDisplay.Text = "$200";
-                dqLinearFeetCostDisplay.Text = "$" + _deskQuote.getLinearFeetCost().ToString();
-                dqDrawersCostDisplay.Text = "$" + _deskQuote.getDrawerCost().ToString();
+                dqLinearFeetCostDisplay.Text = "$" + _deskQuote.getLinearFeetCost();
+                dqDrawersCostDisplay.Text = "$" + _deskQuote.getDrawerCost();
                 dqMaterialCostDisplay.Text = "$" + _deskQuote.getMaterialCost();
                 dqRushCostDisplay.Text = "$" + _deskQuote.getRushCost(_deskQuote.rush);
             } catch

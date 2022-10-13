@@ -143,11 +143,11 @@ namespace MegaDesk_Tibbitts
             // 
             this.aqSurfMaterialCB.FormattingEnabled = true;
             this.aqSurfMaterialCB.Items.AddRange(new object[] {
-            "laminate",
-            "oak",
-            "rosewood",
-            "veneer",
-            "pine"});
+            "Laminate",
+            "Oak",
+            "Rosewood",
+            "Veneer",
+            "Pine"});
             this.aqSurfMaterialCB.Location = new System.Drawing.Point(181, 92);
             this.aqSurfMaterialCB.Name = "aqSurfMaterialCB";
             this.aqSurfMaterialCB.Size = new System.Drawing.Size(121, 21);
@@ -196,7 +196,6 @@ namespace MegaDesk_Tibbitts
             this.aqRushOptionsCB.Name = "aqRushOptionsCB";
             this.aqRushOptionsCB.Size = new System.Drawing.Size(121, 21);
             this.aqRushOptionsCB.TabIndex = 13;
-            this.aqRushOptionsCB.Text = "14";
             // 
             // aqSubmitBtn
             // 
