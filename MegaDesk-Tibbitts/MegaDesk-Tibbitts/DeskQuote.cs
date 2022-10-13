@@ -78,6 +78,7 @@ namespace MegaDesk_Tibbitts
 
         }
         */
+
         public int getRushCost(int rush)
         {
 
