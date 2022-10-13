@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DocumentFormat.OpenXml.Math;
+using Newtonsoft.Json;
 
 namespace MegaDesk_Tibbitts
 {
@@ -22,6 +24,8 @@ namespace MegaDesk_Tibbitts
         {
             _deskQuote = deskQuote;
             InitializeComponent();
+
+            
         }
 
         private void dqMainMenuBtn_Click(object sender, EventArgs e)

@@ -25,6 +25,7 @@ namespace MegaDesk_Tibbitts
         public DeskQuote()
         {
             quoteNum++;
+
         }
 
         // Declare methods
