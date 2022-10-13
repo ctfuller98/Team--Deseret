@@ -13,6 +13,8 @@ namespace MegaDesk_Tibbitts
         public const int MAX_WIDTH = 96;
         public const int MIN_DEPTH = 12;
         public const int MAX_DEPTH = 48;
+        public const int MIN_DRAWERS = 0;
+        public const int MAX_DRAWERS = 7;
 
         public int width { get; set; }
         public int depth { get; set; }
