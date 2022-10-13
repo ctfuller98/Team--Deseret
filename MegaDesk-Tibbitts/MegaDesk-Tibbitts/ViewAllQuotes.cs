@@ -31,11 +31,11 @@ namespace MegaDesk_Tibbitts
             {
                 var newRow = allQuotesTable.Rows.Add();
                 allQuotesTable.Rows[newRow].Cells["name"].Value = quote.name;
-                //allQuotesTable.Rows[newRow].Cells[""].Value =
+                allQuotesTable.Rows[newRow].Cells["TimeStamp"].Value = quote.TimeStamp.ToString("MMM d, yyyy");
                 allQuotesTable.Rows[newRow].Cells["totalCost"].Value = quote.totalCost.ToString();
                 allQuotesTable.Rows[newRow].Cells["rush"].Value = quote.rush;
-                allQuotesTable.Rows[newRow].Cells["width"].Value = quote.Desk.width + "in";
-                allQuotesTable.Rows[newRow].Cells["depth"].Value = quote.Desk.depth + "in";
+                allQuotesTable.Rows[newRow].Cells["width"].Value = quote.Desk.width + " in";
+                allQuotesTable.Rows[newRow].Cells["depth"].Value = quote.Desk.depth + " in";
                 allQuotesTable.Rows[newRow].Cells["numDrawers"].Value = quote.Desk.numDrawers;
                 allQuotesTable.Rows[newRow].Cells["materialType"].Value = quote.Desk.materialType;
 

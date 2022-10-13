@@ -32,7 +32,7 @@ namespace MegaDesk_Tibbitts
             this.vqMainMenuBtn = new System.Windows.Forms.Button();
             this.allQuotesTable = new System.Windows.Forms.DataGridView();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeStamp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rush = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.width = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,7 +60,7 @@ namespace MegaDesk_Tibbitts
             this.allQuotesTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.allQuotesTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
-            this.Column1,
+            this.TimeStamp,
             this.totalCost,
             this.rush,
             this.width,
@@ -78,10 +78,10 @@ namespace MegaDesk_Tibbitts
             this.name.Name = "name";
             this.name.Width = 125;
             // 
-            // Column1
+            // TimeStamp
             // 
-            this.Column1.HeaderText = "Date";
-            this.Column1.Name = "Column1";
+            this.TimeStamp.HeaderText = "Date";
+            this.TimeStamp.Name = "TimeStamp";
             // 
             // totalCost
             // 
@@ -136,7 +136,7 @@ namespace MegaDesk_Tibbitts
         private System.Windows.Forms.Button vqMainMenuBtn;
         private System.Windows.Forms.DataGridView allQuotesTable;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TimeStamp;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalCost;
         private System.Windows.Forms.DataGridViewTextBoxColumn rush;
         private System.Windows.Forms.DataGridViewTextBoxColumn width;
