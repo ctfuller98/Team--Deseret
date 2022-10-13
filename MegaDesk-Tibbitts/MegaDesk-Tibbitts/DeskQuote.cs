@@ -77,6 +77,12 @@ namespace MegaDesk_Tibbitts
             
             return materialCost;
         }
+        /*
+        public void getRushOrder()
+        {
+
+        }
+        */
 
         public int getRushCost(int rush)
         {
