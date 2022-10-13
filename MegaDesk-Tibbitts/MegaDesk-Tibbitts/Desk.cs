@@ -19,7 +19,6 @@ namespace MegaDesk_Tibbitts
         public int depth { get; set; }
         public int numDrawers { get; set; }
         public string materialType { get; set; }
-    }
 
         public const int MAXWIDTH = 96;
         public const int MINWIDTH = 24;
