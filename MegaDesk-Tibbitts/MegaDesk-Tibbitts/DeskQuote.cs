@@ -8,7 +8,7 @@ namespace MegaDesk_Tibbitts
 {
     public class DeskQuote : Desk
     {
-
+      
         private DateTime TimeStamp = new DateTime();
 
         public DateTime timeStamp { get => TimeStamp; set => TimeStamp = value; }
