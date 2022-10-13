@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +8,19 @@ namespace MegaDesk_Tibbitts
 {
     public class Desk
     {
+
+        // Set constant values.
+        public const int MIN_WIDTH = 24;
+        public const int MAX_WIDTH = 96;
+        public const int MIN_DEPTH = 12;
+        public const int MAX_DEPTH = 48;
+
+        public int width { get; set; }
+        public int depth { get; set; }
+        public int numDrawers { get; set; }
+        public string materialType { get; set; }
+    }
+
         public const int MAXWIDTH = 96;
         public const int MINWIDTH = 24;
         public const int MAXDEPTH = 48;
