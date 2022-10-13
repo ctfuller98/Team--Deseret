@@ -43,7 +43,8 @@ namespace MegaDesk_Tibbitts
             deskQuote.Desk.width = widthConversion;
             // Enum assignment test (example from Bro Smith)
             //aqSurfMaterialCB.DataSource = Enum.GetNames(typeof(DesktopMaterial));
-            deskQuote.Desk.materialType = (DesktopMaterial)aqSurfMaterialCB.DataSource;
+            deskQuote.Desk.materialType = aqSurfMaterialCB.Text;
+            //deskQuote.Desk.materialType = Int32.Parse(aqSurfMaterialCB.DataSource);
             var displayQuoteView = new DisplayQuote(deskQuote);
             displayQuoteView.Tag = this;
             displayQuoteView.Show(this);
@@ -138,6 +139,25 @@ namespace MegaDesk_Tibbitts
                 {
                     nonNumberEntered = true;
                 }
+
+                /* Depth Verification
+                string depthString = aqDeskLengthTB.Text;
+                int depthValue = Int32.Parse(depthString);
+                string errorMessage;
+
+                if (depthValue >= Desk.MIN_DEPTH && depthValue <= Desk.MAX_DEPTH)
+                {
+                    errorMessage = "";
+                    aqDeskLengthTB.BackColor = System.Drawing.Color.White;
+                    //deskQuote.desk.width = widthConversion;
+                    return;
+                }
+                else
+                {
+                    errorMessage = "Desk must be between 12 and 48 inches in depth.";
+                    aqDeskLengthTB.BackColor = System.Drawing.Color.LightYellow;
+                    return;
+                } */
             }
         }
 

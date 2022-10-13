@@ -8,50 +8,61 @@ using System.Windows.Forms;
 
 namespace MegaDesk_Tibbitts
 {
-    public class DeskQuote //: Desk
+    public class DeskQuote
     {
         // Declare variables
-        public Desk Desk { get; set; }
+        public Desk Desk = new Desk();
         public string name { get; set; }
         public int rush { get; set; }
-        private DateTime TimeStamp = new DateTime();
-        public DateTime timeStamp { get => TimeStamp; set => TimeStamp = value; }
+
+        public DateTime TimeStamp = DateTime.Today;
         public int totalCost;
-        private int linearFeet;
+        public int linearFeet;
+        public int rushCost;
+        public int materialCost;
+        public int drawerCost;
+        public static int quoteNum { get; set; }
+
+        public DeskQuote()
+        {
+            quoteNum++;
+        }
 
         // Declare methods
-        public int getLinearFeetCost(int width, int depth)
+        public int getLinearFeetCost()
         {
-            linearFeet = width * depth;
+            linearFeet = Desk.width * Desk.depth;
 
             return linearFeet;
         }
 
-        public int getDrawerCost(int numDrawers)
+        public int getDrawerCost()
         {
-            return totalCost += numDrawers * 50;
+            drawerCost = Desk.numDrawers * 50;
+
+            return drawerCost;
         }
 
-        public int getMaterialCost(int materialType)
+        public int getMaterialCost()
         {
             // Declare variables.
-            int materialCost = 0;
+            materialCost = 0;
 
-            switch (materialType)
+            switch (Desk.materialType)
             {
-                case 0:
+                case "laminate":
                     materialCost += 100;
                     break;
-                case 1:
+                case "oak":
                     materialCost += 200;
                     break;
-                case 2:
+                case "rosewood":
                     materialCost += 300;
                     break;
-                case 3:
+                case "veneer":
                     materialCost += 125;
                     break;
-                case 4:
+                case "pine":
                     materialCost += 50;
                     break;
                 default:
@@ -59,13 +70,11 @@ namespace MegaDesk_Tibbitts
                     break;
             }
             
-            return totalCost += materialCost;
+            return materialCost;
         }
 
         public int getRushCost(int rush)
         {
-            int linearFeet = getLinearFeetCost(Desk.width, Desk.depth);
-            int rushCost = 0;
 
             if (linearFeet < 1000)
             {
@@ -76,7 +85,7 @@ namespace MegaDesk_Tibbitts
                 else if (rush == 3)
                     rushCost = 60;
             }
-            else if (linearFeet > 999 && linearFeet < 2001)
+            else if (linearFeet >= 1000 && linearFeet < 2000)
             {
                 if (rush == 7)
                     rushCost = 35;
@@ -85,7 +94,7 @@ namespace MegaDesk_Tibbitts
                 else if (rush == 3)
                     rushCost = 70;
             }
-            else if (linearFeet > 2000)
+            else if (linearFeet >= 2000)
             {
                 if (rush == 7)
                     rushCost = 40;
@@ -99,19 +108,19 @@ namespace MegaDesk_Tibbitts
                 rushCost = 0;
             }
 
-            return totalCost += rushCost;
+            return rushCost;
 
         }
 
-        public int getTotal(Desk desk)
+        public int getTotal(Desk Desk)
         {
-            totalCost += 200;
-            totalCost += getLinearFeetCost(desk.width, desk.depth);
-            totalCost += getDrawerCost(desk.numDrawers);
-            totalCost += getMaterialCost((int)desk.materialType);
-            totalCost += getRushCost(rush);
+            int baseCost = 200;
+            linearFeet = getLinearFeetCost();
+            drawerCost = getDrawerCost();
+            materialCost = getMaterialCost();
+            rushCost = getRushCost(rush);
 
-            return totalCost;
+            return totalCost = baseCost + linearFeet + drawerCost + materialCost + rushCost;
         }
     }
 }

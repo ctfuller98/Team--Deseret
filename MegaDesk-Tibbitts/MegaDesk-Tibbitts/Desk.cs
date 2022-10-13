@@ -17,7 +17,7 @@ namespace MegaDesk_Tibbitts
         public int width { get; set; }
         public int depth { get; set; }
         public int numDrawers { get; set; }
-        public DesktopMaterial materialType { get; set; }
+        public string materialType { get; set; }
     }
 
     // Enumerated value.
