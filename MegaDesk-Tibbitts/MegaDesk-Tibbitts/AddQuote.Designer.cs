@@ -114,6 +114,7 @@ namespace MegaDesk_Tibbitts
             // 
             // aqNumDrawersCB
             // 
+            this.aqNumDrawersCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.aqNumDrawersCB.FormattingEnabled = true;
             this.aqNumDrawersCB.Items.AddRange(new object[] {
             "0",
@@ -141,6 +142,7 @@ namespace MegaDesk_Tibbitts
             // 
             // aqSurfMaterialCB
             // 
+            this.aqSurfMaterialCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.aqSurfMaterialCB.FormattingEnabled = true;
             this.aqSurfMaterialCB.Items.AddRange(new object[] {
             "laminate",
@@ -186,6 +188,7 @@ namespace MegaDesk_Tibbitts
             // 
             // aqRushOptionsCB
             // 
+            this.aqRushOptionsCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.aqRushOptionsCB.FormattingEnabled = true;
             this.aqRushOptionsCB.Items.AddRange(new object[] {
             "14",
@@ -196,7 +199,6 @@ namespace MegaDesk_Tibbitts
             this.aqRushOptionsCB.Name = "aqRushOptionsCB";
             this.aqRushOptionsCB.Size = new System.Drawing.Size(121, 21);
             this.aqRushOptionsCB.TabIndex = 13;
-            this.aqRushOptionsCB.Text = "14";
             // 
             // aqSubmitBtn
             // 
