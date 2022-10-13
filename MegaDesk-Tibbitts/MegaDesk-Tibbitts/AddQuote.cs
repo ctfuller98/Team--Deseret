@@ -47,8 +47,8 @@ namespace MegaDesk_Tibbitts
             //deskQuote.Desk.materialType = Int32.Parse(aqSurfMaterialCB.DataSource);
             var displayQuoteView = new DisplayQuote(deskQuote);
 
-            aqSurfMaterialCB.DataSource = Enum.GetNames(typeof(DesktopMaterial));
-            _deskQuote.material = aqSurfMaterialCB.DataSource;
+            aqSurfMaterialCB.DataSource = Enum.GetNames(typeof());
+            _deskQuote.desk.material = aqSurfMaterialCB.DataSource;
 
 
             //material = aqSurfMaterialCB;
