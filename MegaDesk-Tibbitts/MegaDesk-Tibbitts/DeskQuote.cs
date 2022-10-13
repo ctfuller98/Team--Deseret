@@ -1,4 +1,3 @@
-using DocumentFormat.OpenXml.Drawing.Charts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,10 +16,7 @@ namespace MegaDesk_Tibbitts
         public int rush { get; set; }
 
         public DateTime TimeStamp = DateTime.Today;
-      
-        private DateTime TimeStamp = new DateTime();
 
-        public DateTime timeStamp { get => TimeStamp; set => TimeStamp = value; }
         public int totalCost;
         public int linearFeet;
         public int rushCost;
