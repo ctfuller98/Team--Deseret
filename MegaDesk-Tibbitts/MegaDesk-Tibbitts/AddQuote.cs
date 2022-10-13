@@ -17,7 +17,6 @@ namespace MegaDesk_Tibbitts
         readonly ErrorProvider errorProvider1 = new ErrorProvider();
         private bool nonNumberEntered = false;
         public DeskQuote deskQuote = new DeskQuote();
-        //public Desk Desk = new Desk();
         int widthConversion;
 
         public AddQuote()

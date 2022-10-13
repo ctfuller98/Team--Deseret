@@ -109,7 +109,6 @@ namespace MegaDesk_Tibbitts
             }
 
             return rushCost;
-
         }
 
         public int getTotal(Desk Desk)
