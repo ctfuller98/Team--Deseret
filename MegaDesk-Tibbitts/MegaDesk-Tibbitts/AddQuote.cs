@@ -33,17 +33,13 @@ namespace MegaDesk_Tibbitts
         }
         private void aqSubmitBtn_Click(object sender, EventArgs e)
         {
-            
-            //_desk.name = aqFullNameTB.Text;
             deskQuote.name = aqFullNameTB.Text;
             deskQuote.Desk.depth = Int32.Parse(aqDeskLengthTB.Text);
             deskQuote.Desk.numDrawers = Int32.Parse(aqNumDrawersCB.Text);
             deskQuote.rush = Int32.Parse(aqRushOptionsCB.Text);
             deskQuote.Desk.width = widthConversion;
             // Enum assignment test (example from Bro Smith)
-            //aqSurfMaterialCB.DataSource = Enum.GetNames(typeof(DesktopMaterial));
             deskQuote.Desk.materialType = aqSurfMaterialCB.Text;
-            //deskQuote.Desk.materialType = Int32.Parse(aqSurfMaterialCB.DataSource);
             var displayQuoteView = new DisplayQuote(deskQuote);
             displayQuoteView.Tag = this;
             displayQuoteView.Show(this);

@@ -14,8 +14,8 @@ namespace MegaDesk_Tibbitts
     public partial class DisplayQuote : Form
     {   
         // Declare variables.
-        private readonly DeskQuote _deskQuote; //= new DeskQuote();
-        private readonly Desk desk; // = new Desk();
+        private readonly DeskQuote _deskQuote;
+        private readonly Desk desk;
 
 
         public DisplayQuote(DeskQuote deskQuote)
