@@ -42,7 +42,9 @@ namespace MegaDesk_Tibbitts
             _deskQuote.rush = Int32.Parse(aqRushOptionsCB.Text);
             //material = aqSurfMaterialCB;
             //var displayQuoteView = new DisplayQuote(_desk);
+
             var displayQuoteView = new DisplayQuote(_deskQuote);
+            
             //newDesk.name = aqFullNameLabel.Text; // MAY NEED TO DO AS A DESKQUOTE CLASS OBJECT***
             //DisplayQuote displayQuoteView = new DisplayQuote(_desk);
             displayQuoteView.Tag = this;
