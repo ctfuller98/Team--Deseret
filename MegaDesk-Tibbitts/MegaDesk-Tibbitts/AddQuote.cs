@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,10 +41,23 @@ namespace MegaDesk_Tibbitts
             deskQuote.rush = Int32.Parse(aqRushOptionsCB.Text);
             deskQuote.Desk.width = widthConversion;
             // Enum assignment test (example from Bro Smith)
+
             //aqSurfMaterialCB.DataSource = Enum.GetNames(typeof(DesktopMaterial));
             deskQuote.Desk.materialType = aqSurfMaterialCB.Text;
             //deskQuote.Desk.materialType = Int32.Parse(aqSurfMaterialCB.DataSource);
             var displayQuoteView = new DisplayQuote(deskQuote);
+
+            aqSurfMaterialCB.DataSource = Enum.GetNames(typeof(DesktopMaterial));
+            _deskQuote.material = aqSurfMaterialCB.DataSource;
+
+
+            //material = aqSurfMaterialCB;
+            //var displayQuoteView = new DisplayQuote(_desk);
+
+            var displayQuoteView = new DisplayQuote(_deskQuote);
+            
+            //newDesk.name = aqFullNameLabel.Text; // MAY NEED TO DO AS A DESKQUOTE CLASS OBJECT***
+            //DisplayQuote displayQuoteView = new DisplayQuote(_desk);
             displayQuoteView.Tag = this;
             displayQuoteView.Show(this);
             Hide();
