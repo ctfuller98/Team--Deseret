@@ -29,6 +29,7 @@ namespace MegaDesk_Tibbitts
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.aqFullNameLabel = new System.Windows.Forms.Label();
             this.aqFullNameTB = new System.Windows.Forms.TextBox();
             this.aqDeskWidthLabel = new System.Windows.Forms.Label();
@@ -44,6 +45,10 @@ namespace MegaDesk_Tibbitts
             this.aqRushSubLabel = new System.Windows.Forms.Label();
             this.aqRushOptionsCB = new System.Windows.Forms.ComboBox();
             this.aqSubmitBtn = new System.Windows.Forms.Button();
+            this.NameErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.DepthErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.NameErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DepthErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // aqFullNameLabel
@@ -62,6 +67,7 @@ namespace MegaDesk_Tibbitts
             this.aqFullNameTB.Name = "aqFullNameTB";
             this.aqFullNameTB.Size = new System.Drawing.Size(100, 20);
             this.aqFullNameTB.TabIndex = 1;
+            this.aqFullNameTB.Validating += new System.ComponentModel.CancelEventHandler(this.aqFullNameTB_Validating);
             // 
             // aqDeskWidthLabel
             // 
@@ -211,6 +217,14 @@ namespace MegaDesk_Tibbitts
             this.aqSubmitBtn.UseVisualStyleBackColor = true;
             this.aqSubmitBtn.Click += new System.EventHandler(this.aqSubmitBtn_Click);
             // 
+            // NameErrorProvider
+            // 
+            this.NameErrorProvider.ContainerControl = this;
+            // 
+            // DepthErrorProvider
+            // 
+            this.DepthErrorProvider.ContainerControl = this;
+            // 
             // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,6 +248,8 @@ namespace MegaDesk_Tibbitts
             this.Name = "AddQuote";
             this.Text = "AddQuote";
             this.Load += new System.EventHandler(this.AddQuote_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.NameErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DepthErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,5 +272,7 @@ namespace MegaDesk_Tibbitts
         private System.Windows.Forms.Label aqRushSubLabel;
         private System.Windows.Forms.ComboBox aqRushOptionsCB;
         private System.Windows.Forms.Button aqSubmitBtn;
+        private System.Windows.Forms.ErrorProvider NameErrorProvider;
+        private System.Windows.Forms.ErrorProvider DepthErrorProvider;
     }
 }

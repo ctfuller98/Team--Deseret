@@ -137,7 +137,6 @@ namespace MegaDesk_Tibbitts
         {
             // Initialize the flag to false.
             nonNumberEntered = false;
-
             // Determine whether the keystroke is a number from the top of the keyboard.
             if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
             {
@@ -159,41 +158,63 @@ namespace MegaDesk_Tibbitts
                     nonNumberEntered = true;
                 }
 
-                /* Depth Verification
-                string depthString = aqDeskLengthTB.Text;
-                int depthValue = Int32.Parse(depthString);
-                string errorMessage;
-
-                if (depthValue >= Desk.MIN_DEPTH && depthValue <= Desk.MAX_DEPTH)
-                {
-                    errorMessage = "";
-                    aqDeskLengthTB.BackColor = System.Drawing.Color.White;
-                    //deskQuote.desk.width = widthConversion;
-                    return;
-                }
-                else
-                {
-                    errorMessage = "Desk must be between 12 and 48 inches in depth.";
-                    aqDeskLengthTB.BackColor = System.Drawing.Color.LightYellow;
-                    return;
-                } */
             }
         }
 
         private void aqDeskDepthTB_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Check for the flag being set in the KeyDown event.
-            if (nonNumberEntered == true)
+            if (nonNumberEntered)
             {
-                // Stop the character from being entered into the control since it is non-numerical.
-                e.Handled = true;
+            // Stop the character from being entered into the control since it is non-numerical.
+            e.Handled = true;
             }
+
+            TextBox input = (TextBox)sender;
+            try
+            {
+                char newKey = e.KeyChar;
+                if (char.IsControl(newKey))
+                {
+                    return;
+                }
+
+                int newDepth;
+                if (char.IsDigit(newKey) && Int32.TryParse(input.Text + newKey, out newDepth))
+                {
+                    deskQuote.Desk.Depth = newDepth;
+                    DepthErrorProvider.SetError(aqDeskLengthTB, "");
+                }
+                else
+                {
+                    DepthErrorProvider.SetError(aqDeskLengthTB, "Enter a number.");
+                }
+            }
+            catch (Exception exception)
+            {
+                DepthErrorProvider.SetError(aqDeskLengthTB, "Input value must be between 12 and 48 inches.");
+            }
+
         }
 
         private void AddQuote_Load(object sender, EventArgs e)
         {
             // Enum assignment test (example from Bro Smith)
             aqSurfMaterialCB.DataSource = Enum.GetNames(typeof(Desk.DeskMaterial));
+        }
+
+        private void aqFullNameTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (aqFullNameTB.Text.Length == 0)
+            {
+                NameErrorProvider.SetError(aqFullNameTB, "Name input cannot be empty.");
+            }
+            else
+            {
+                NameErrorProvider.SetError(aqFullNameTB, "");
+            }
+
+            deskQuote.name = aqFullNameTB.Text;
         }
     }
 }
