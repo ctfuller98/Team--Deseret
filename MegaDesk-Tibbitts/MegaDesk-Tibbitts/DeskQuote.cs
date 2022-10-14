@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DocumentFormat.OpenXml.Spreadsheet;
 using Newtonsoft.Json.Linq;
 
 namespace MegaDesk_Tibbitts
@@ -82,11 +83,8 @@ namespace MegaDesk_Tibbitts
 
         public void getRushOrder(out int[,] array, int rows, int columns)
         {
-            // Read from file.
-            string path = @"..\rushOrderPrices.txt";
-
-            // Read All Lines Method.
-            string[] readText = File.ReadAllLines(path);
+           // Read All Lines Method.
+            string[] readText = File.ReadAllLines("rushOrderPrices.txt");
             array = new int[rows, columns];
             int index = 0;
 
