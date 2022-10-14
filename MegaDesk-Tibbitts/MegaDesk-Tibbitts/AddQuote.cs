@@ -216,5 +216,10 @@ namespace MegaDesk_Tibbitts
 
             deskQuote.name = aqFullNameTB.Text;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

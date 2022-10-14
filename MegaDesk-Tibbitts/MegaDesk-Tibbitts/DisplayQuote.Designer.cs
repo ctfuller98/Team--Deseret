@@ -62,13 +62,15 @@ namespace MegaDesk_Tibbitts
             // 
             // dqMainMenuBtn
             // 
-            this.dqMainMenuBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dqMainMenuBtn.Location = new System.Drawing.Point(182, 317);
+            this.dqMainMenuBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dqMainMenuBtn.Font = new System.Drawing.Font("Garamond", 15F, System.Drawing.FontStyle.Bold);
+            this.dqMainMenuBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dqMainMenuBtn.Location = new System.Drawing.Point(185, 324);
             this.dqMainMenuBtn.Name = "dqMainMenuBtn";
             this.dqMainMenuBtn.Size = new System.Drawing.Size(138, 54);
             this.dqMainMenuBtn.TabIndex = 0;
             this.dqMainMenuBtn.Text = "&Main Menu";
-            this.dqMainMenuBtn.UseVisualStyleBackColor = true;
+            this.dqMainMenuBtn.UseVisualStyleBackColor = false;
             this.dqMainMenuBtn.Click += new System.EventHandler(this.dqMainMenuBtn_Click);
             // 
             // dqNameLabel
@@ -355,6 +357,7 @@ namespace MegaDesk_Tibbitts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(530, 433);
             this.Controls.Add(this.dqRushCostDisplay);
             this.Controls.Add(this.dqMaterialCostDisplay);

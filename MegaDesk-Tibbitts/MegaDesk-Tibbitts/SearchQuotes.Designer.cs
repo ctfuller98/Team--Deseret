@@ -46,19 +46,22 @@ namespace MegaDesk_Tibbitts
             // 
             // sqMainMenuBtn
             // 
-            this.sqMainMenuBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sqMainMenuBtn.Location = new System.Drawing.Point(12, 384);
+            this.sqMainMenuBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.sqMainMenuBtn.Font = new System.Drawing.Font("Garamond", 15F, System.Drawing.FontStyle.Bold);
+            this.sqMainMenuBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.sqMainMenuBtn.Location = new System.Drawing.Point(650, 384);
             this.sqMainMenuBtn.Name = "sqMainMenuBtn";
             this.sqMainMenuBtn.Size = new System.Drawing.Size(138, 54);
             this.sqMainMenuBtn.TabIndex = 0;
             this.sqMainMenuBtn.Text = "&Main Menu";
-            this.sqMainMenuBtn.UseVisualStyleBackColor = true;
+            this.sqMainMenuBtn.UseVisualStyleBackColor = false;
             this.sqMainMenuBtn.Click += new System.EventHandler(this.sqMainMenuBtn_Click);
             // 
             // allQuotesTable
             // 
             this.allQuotesTable.AllowUserToAddRows = false;
             this.allQuotesTable.AllowUserToDeleteRows = false;
+            this.allQuotesTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.allQuotesTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.allQuotesTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
@@ -69,6 +72,7 @@ namespace MegaDesk_Tibbitts
             this.depth,
             this.numDrawers,
             this.materialType});
+            this.allQuotesTable.GridColor = System.Drawing.Color.Maroon;
             this.allQuotesTable.Location = new System.Drawing.Point(12, 121);
             this.allQuotesTable.Name = "allQuotesTable";
             this.allQuotesTable.Size = new System.Drawing.Size(776, 257);
@@ -121,32 +125,39 @@ namespace MegaDesk_Tibbitts
             // 
             // MaterialComboBox
             // 
+            this.MaterialComboBox.BackColor = System.Drawing.SystemColors.Info;
             this.MaterialComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.MaterialComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.MaterialComboBox.FormattingEnabled = true;
-            this.MaterialComboBox.Location = new System.Drawing.Point(304, 92);
+            this.MaterialComboBox.Location = new System.Drawing.Point(171, 73);
             this.MaterialComboBox.Name = "MaterialComboBox";
-            this.MaterialComboBox.Size = new System.Drawing.Size(121, 21);
+            this.MaterialComboBox.Size = new System.Drawing.Size(235, 33);
             this.MaterialComboBox.TabIndex = 4;
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(431, 92);
+            this.SearchButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.SearchButton.Font = new System.Drawing.Font("Garamond", 15F);
+            this.SearchButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.SearchButton.Location = new System.Drawing.Point(433, 73);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(75, 23);
+            this.SearchButton.Size = new System.Drawing.Size(156, 35);
             this.SearchButton.TabIndex = 5;
             this.SearchButton.Text = "Search List";
-            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.UseVisualStyleBackColor = false;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // SearchQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.MaterialComboBox);
             this.Controls.Add(this.allQuotesTable);
             this.Controls.Add(this.sqMainMenuBtn);
+            this.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.Name = "SearchQuotes";
             this.Text = "SearchQuotes";
             ((System.ComponentModel.ISupportInitialize)(this.allQuotesTable)).EndInit();

@@ -44,19 +44,22 @@ namespace MegaDesk_Tibbitts
             // 
             // vqMainMenuBtn
             // 
-            this.vqMainMenuBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vqMainMenuBtn.Location = new System.Drawing.Point(12, 384);
+            this.vqMainMenuBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.vqMainMenuBtn.Font = new System.Drawing.Font("Garamond", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vqMainMenuBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.vqMainMenuBtn.Location = new System.Drawing.Point(641, 384);
             this.vqMainMenuBtn.Name = "vqMainMenuBtn";
             this.vqMainMenuBtn.Size = new System.Drawing.Size(138, 54);
             this.vqMainMenuBtn.TabIndex = 0;
             this.vqMainMenuBtn.Text = "&Main Menu";
-            this.vqMainMenuBtn.UseVisualStyleBackColor = true;
+            this.vqMainMenuBtn.UseVisualStyleBackColor = false;
             this.vqMainMenuBtn.Click += new System.EventHandler(this.vqMainMenuBtn_Click);
             // 
             // allQuotesTable
             // 
             this.allQuotesTable.AllowUserToAddRows = false;
             this.allQuotesTable.AllowUserToDeleteRows = false;
+            this.allQuotesTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.allQuotesTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.allQuotesTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
@@ -67,6 +70,7 @@ namespace MegaDesk_Tibbitts
             this.depth,
             this.numDrawers,
             this.materialType});
+            this.allQuotesTable.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.allQuotesTable.Location = new System.Drawing.Point(12, 12);
             this.allQuotesTable.Name = "allQuotesTable";
             this.allQuotesTable.Size = new System.Drawing.Size(776, 194);
@@ -121,6 +125,7 @@ namespace MegaDesk_Tibbitts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.allQuotesTable);
             this.Controls.Add(this.vqMainMenuBtn);
