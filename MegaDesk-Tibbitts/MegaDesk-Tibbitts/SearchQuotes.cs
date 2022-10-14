@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -18,10 +19,8 @@ namespace MegaDesk_Tibbitts
         public SearchQuotes()
         {
             InitializeComponent();
-            List<Desk.DeskMaterial> desktopMaterials =
-                Enum.GetValues(typeof(Desk.DeskMaterial)).Cast<Desk.DeskMaterial>().ToList();
-            MaterialComboBox.DataSource = desktopMaterials;
 
+            MaterialComboBox.DataSource = Enum.GetNames(typeof(Desk.DeskMaterial));
             //read json file
             string json = File.ReadAllText("quotes.json");
             allQuotesJson = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
@@ -29,24 +28,26 @@ namespace MegaDesk_Tibbitts
         }
         private void PopulateDataTable()
         {
+            allQuotesTable.Rows.Clear();
+            allQuotesTable.Refresh();
             foreach (DeskQuote quote in allQuotesJson)
             {
-                var newRow = allQuotesTable.Rows.Add();
-                allQuotesTable.Rows[newRow].Cells["name"].Value = quote.name;
-                allQuotesTable.Rows[newRow].Cells["TimeStamp"].Value = quote.TimeStamp.ToString("MMM d, yyyy");
-                allQuotesTable.Rows[newRow].Cells["totalCost"].Value = quote.totalCost.ToString();
-                allQuotesTable.Rows[newRow].Cells["rush"].Value = quote.rush;
-                allQuotesTable.Rows[newRow].Cells["width"].Value = quote.Desk.Width + " in";
-                allQuotesTable.Rows[newRow].Cells["depth"].Value = quote.Desk.Depth + " in";
-                allQuotesTable.Rows[newRow].Cells["numDrawers"].Value = quote.Desk.DrawerNumber;
-                allQuotesTable.Rows[newRow].Cells["materialType"].Value = quote.Desk.Material;
+
+                if (quote.Desk.Material == Convert.ToString(MaterialComboBox.SelectedItem))
+                {
+                    var newRow = allQuotesTable.Rows.Add();
+                    allQuotesTable.Rows[newRow].Cells["name"].Value = quote.name;
+                    allQuotesTable.Rows[newRow].Cells["TimeStamp"].Value = quote.TimeStamp.ToString("MMM d, yyyy");
+                    allQuotesTable.Rows[newRow].Cells["totalCost"].Value = quote.totalCost.ToString();
+                    allQuotesTable.Rows[newRow].Cells["rush"].Value = quote.rush;
+                    allQuotesTable.Rows[newRow].Cells["width"].Value = quote.Desk.Width + " in";
+                    allQuotesTable.Rows[newRow].Cells["depth"].Value = quote.Desk.Depth + " in";
+                    allQuotesTable.Rows[newRow].Cells["numDrawers"].Value = quote.Desk.DrawerNumber;
+                    allQuotesTable.Rows[newRow].Cells["materialType"].Value = quote.Desk.Material;
+                }
+               
 
             }
-
-        }
-
-        private void filterTable()
-        {
 
         }
 
@@ -61,6 +62,7 @@ namespace MegaDesk_Tibbitts
         private void SearchButton_Click(object sender, EventArgs e)
         {
 
+            PopulateDataTable();
         }
     }
 }
