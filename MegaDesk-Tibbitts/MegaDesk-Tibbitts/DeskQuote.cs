@@ -1,5 +1,4 @@
-﻿using DocumentFormat.OpenXml.Drawing.Charts;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,14 +30,14 @@ namespace MegaDesk_Tibbitts
         // Declare methods
         public int getLinearFeetCost()
         {
-            linearFeet = Desk.width * Desk.depth;
+            linearFeet = Desk.Width * Desk.Depth;
 
             return linearFeet;
         }
 
         public int getDrawerCost()
         {
-            drawerCost = Desk.numDrawers * 50;
+            drawerCost = Desk.DrawerNumber * 50;
 
             return drawerCost;
         }
@@ -48,21 +47,21 @@ namespace MegaDesk_Tibbitts
             // Declare variables.
             materialCost = 0;
 
-            switch (Desk.materialType)
+            switch (Desk.Material)
             {
-                case "laminate":
+                case "Laminate":
                     materialCost += 100;
                     break;
-                case "oak":
+                case "Oak":
                     materialCost += 200;
                     break;
-                case "rosewood":
+                case "Rosewood":
                     materialCost += 300;
                     break;
-                case "veneer":
+                case "Veneer":
                     materialCost += 125;
                     break;
-                case "pine":
+                case "Pine":
                     materialCost += 50;
                     break;
                 default:

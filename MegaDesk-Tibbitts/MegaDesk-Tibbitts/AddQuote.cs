@@ -34,12 +34,14 @@ namespace MegaDesk_Tibbitts
         private void aqSubmitBtn_Click(object sender, EventArgs e)
         {
             deskQuote.name = aqFullNameTB.Text;
-            deskQuote.Desk.depth = Int32.Parse(aqDeskLengthTB.Text);
-            deskQuote.Desk.numDrawers = Int32.Parse(aqNumDrawersCB.Text);
+            deskQuote.Desk.Depth = Int32.Parse(aqDeskLengthTB.Text);
+            deskQuote.Desk.DrawerNumber = Int32.Parse(aqNumDrawersCB.Text);
             deskQuote.rush = Int32.Parse(aqRushOptionsCB.Text);
-            deskQuote.Desk.width = widthConversion;
+            deskQuote.Desk.Width = widthConversion;
             // Enum assignment test (example from Bro Smith)
-            deskQuote.Desk.materialType = aqSurfMaterialCB.Text;
+            //aqSurfMaterialCB.DataSource = Enum.GetNames(typeof(DesktopMaterial));
+            deskQuote.Desk.Material = aqSurfMaterialCB.Text;
+            //deskQuote.Desk.materialType = Int32.Parse(aqSurfMaterialCB.DataSource);
             var displayQuoteView = new DisplayQuote(deskQuote);
             displayQuoteView.Tag = this;
             displayQuoteView.Show(this);
@@ -169,7 +171,7 @@ namespace MegaDesk_Tibbitts
         private void AddQuote_Load(object sender, EventArgs e)
         {
             // Enum assignment test (example from Bro Smith)
-            aqSurfMaterialCB.DataSource = Enum.GetNames(typeof(DesktopMaterial));
+            aqSurfMaterialCB.DataSource = Enum.GetNames(typeof(Desk.DeskMaterial));
         }
     }
 }
