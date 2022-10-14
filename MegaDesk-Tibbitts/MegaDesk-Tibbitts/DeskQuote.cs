@@ -83,8 +83,11 @@ namespace MegaDesk_Tibbitts
 
         public void getRushOrder(out int[,] array, int rows, int columns)
         {
-           // Read All Lines Method.
-            string[] readText = File.ReadAllLines("rushOrderPrices.txt");
+            // Read All Lines Method.
+            string path =
+                @"C:\Users\tomto\source\repos\Team--Deseret\MegaDesk-Tibbitts\MegaDesk-Tibbitts\Resources\rushOrderPrices.txt";
+            //string[] readText = File.ReadAllLines("rushOrderPrices.txt");
+            string[] readText = File.ReadAllLines(path);
             array = new int[rows, columns];
             int index = 0;
 
