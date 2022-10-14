@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,10 +44,30 @@ namespace MegaDesk_Tibbitts
             //aqSurfMaterialCB.DataSource = Enum.GetNames(typeof(DesktopMaterial));
             deskQuote.Desk.Material = aqSurfMaterialCB.Text;
             //deskQuote.Desk.materialType = Int32.Parse(aqSurfMaterialCB.DataSource);
+
+            
+
             var displayQuoteView = new DisplayQuote(deskQuote);
             displayQuoteView.Tag = this;
             displayQuoteView.Show(this);
             Hide();
+
+            //saving quotes to file
+            List<DeskQuote> allQuotes;
+
+            try
+            {
+                var quotesJson = File.ReadAllText("quotes.json");
+                allQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(quotesJson) ?? new List<DeskQuote>();
+            }
+            catch (Exception)
+            {
+                allQuotes = new List<DeskQuote>();
+            }
+
+            allQuotes.Add(deskQuote);
+            var json = JsonConvert.SerializeObject(allQuotes);
+            File.WriteAllText("quotes.json", json);
         }
         
         private void aqDeskWidthTB_Validating(object sender,
