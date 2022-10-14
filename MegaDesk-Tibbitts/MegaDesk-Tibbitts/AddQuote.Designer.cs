@@ -163,7 +163,7 @@ namespace MegaDesk_Tibbitts
             "Rosewood",
             "Veneer",
             "Pine"});
-            this.aqSurfMaterialCB.Location = new System.Drawing.Point(160, 224);
+            this.aqSurfMaterialCB.Location = new System.Drawing.Point(184, 182);
             this.aqSurfMaterialCB.Name = "aqSurfMaterialCB";
             this.aqSurfMaterialCB.Size = new System.Drawing.Size(121, 28);
             this.aqSurfMaterialCB.TabIndex = 9;
@@ -209,7 +209,7 @@ namespace MegaDesk_Tibbitts
             "7",
             "5",
             "3"});
-            this.aqRushOptionsCB.Location = new System.Drawing.Point(184, 182);
+            this.aqRushOptionsCB.Location = new System.Drawing.Point(160, 224);
             this.aqRushOptionsCB.Name = "aqRushOptionsCB";
             this.aqRushOptionsCB.Size = new System.Drawing.Size(121, 28);
             this.aqRushOptionsCB.TabIndex = 13;
