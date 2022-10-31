@@ -19,7 +19,7 @@ namespace MegaDesk_Tibbitts
         public SearchQuotes()
         {
             InitializeComponent();
-
+                          
             MaterialComboBox.DataSource = Enum.GetNames(typeof(Desk.DeskMaterial));
             //read json file
             string json = File.ReadAllText("quotes.json");
