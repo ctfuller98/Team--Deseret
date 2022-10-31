@@ -1,0 +1,77 @@
+﻿@page
+@model DeseretMegaDesk.Pages.Quotes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].DeskWidth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].DeskDepth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].DeskDrawers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].RushDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].DesktopMaterial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].QuoteDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].TotalPrice)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.DeskQuote) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeskWidth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeskDepth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeskDrawers)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RushDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DesktopMaterial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuoteDate)
+            </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.TotalPrice)
+                </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

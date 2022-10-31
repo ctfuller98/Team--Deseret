@@ -1,0 +1,68 @@
+﻿@page
+@using DeseretMegaDesk.Models
+@model DeseretMegaDesk.Pages.Quotes.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>DeskQuote</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.CustomerName" class="control-label"></label>
+                <input asp-for="DeskQuote.CustomerName" class="form-control" />
+                <span asp-validation-for="DeskQuote.CustomerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.DeskWidth" class="control-label"></label>
+                <input asp-for="DeskQuote.DeskWidth" class="form-control" />
+                <span asp-validation-for="DeskQuote.DeskWidth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.DeskDepth" class="control-label"></label>
+                <input asp-for="DeskQuote.DeskDepth" class="form-control" />
+                <span asp-validation-for="DeskQuote.DeskDepth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.DeskDrawers" class="control-label"></label>
+                <input asp-for="DeskQuote.DeskDrawers" class="form-control" />
+                <span asp-validation-for="DeskQuote.DeskDrawers" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.RushDays" class="control-label"></label>
+                <input asp-for="DeskQuote.RushDays" class="form-check-input" type="radio" value="0" checked/>No Rush - 14 days
+                <input asp-for="DeskQuote.RushDays" class="form-check-input" type="radio" value="3" />3 days
+                <input asp-for="DeskQuote.RushDays" class="form-check-input" type="radio" value="5" />5 days
+                <input asp-for="DeskQuote.RushDays" class="form-check-input" type="radio" value="7" />7 days
+                <span asp-validation-for="DeskQuote.RushDays" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.DesktopMaterial" class="control-label"></label>
+                <select asp-for="DeskQuote.DesktopMaterial" asp-items="Html.GetEnumSelectList<DesktopMaterial>()" class="form-control"></select>
+                <span asp-validation-for="DeskQuote.DesktopMaterial" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="DeskQuote.QuoteDate" class="control-label"></label>
+                <input asp-for="DeskQuote.QuoteDate" class="form-control" />
+                <span asp-validation-for="DeskQuote.QuoteDate" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
